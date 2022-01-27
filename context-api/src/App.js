@@ -1,26 +1,15 @@
-import { createContext, useState } from "react";
-
-import ClassComponent from "./components/ClassComponent";
+// import ClassComponent from "./components/ClassComponent";
 import FunctionalComponent from "./components/FunctionalComponent";
+import TheameProvider from "./contextFolder/TheameUpdate";
 import "./App.css";
 
-export const TheameContext = createContext();
-
 function App() {
-  const [darkTheame, setDarkTheame] = useState(false);
-
-  const toggleTheame = () => {
-    setDarkTheame((prevState) => !prevState);
-    console.log(darkTheame);
-  };
-
   return (
     <>
-      <TheameContext.Provider value={darkTheame}>
-        <button onClick={toggleTheame}>Change Theame</button>
+      <TheameProvider>
         <FunctionalComponent />
-        <ClassComponent />
-      </TheameContext.Provider>
+        {/* <ClassComponent /> */}
+      </TheameProvider>
     </>
   );
 }

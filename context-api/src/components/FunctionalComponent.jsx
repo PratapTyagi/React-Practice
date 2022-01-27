@@ -1,6 +1,6 @@
-import React, { useContext } from "react";
+import React from "react";
 
-import { TheameContext } from "../App";
+import { useTheame, useTheameUpdate } from "../contextFolder/TheameUpdate";
 
 const FunctionalComponent = () => {
   const toggleStyle = (dark) => {
@@ -12,8 +12,14 @@ const FunctionalComponent = () => {
       textAlign: "center",
     };
   };
-  const darkTheame = useContext(TheameContext);
-  return <p style={toggleStyle(darkTheame)}>Function</p>;
+  const darkTheame = useTheame();
+  const toggleTheame = useTheameUpdate();
+  return (
+    <>
+      <button onClick={toggleTheame}>Change Theame</button>
+      <p style={toggleStyle(darkTheame)}>Function</p>
+    </>
+  );
 };
 
 export default FunctionalComponent;
