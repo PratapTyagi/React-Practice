@@ -1,0 +1,12 @@
+.app {
+  text-align: center;
+}
+body {
+  background-color: black;
+  color: whitesmoke;
+}
+
+.app > .todo_Info {
+  width: fit-content;
+  margin: 20px auto;
+}
