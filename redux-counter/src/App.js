@@ -5,6 +5,7 @@ import {
   DECREAMENT_COUNTER,
   RESET,
 } from "./actions/actionTypes";
+import { decreament, increament, reset } from "./actions/counterAction";
 
 import "./App.css";
 
@@ -17,40 +18,26 @@ function App() {
     <div className="App">
       <p>Count: {count}</p>
       <input
-        type="number"
+        type="text"
         placeholder="Value"
         value={increamentValue}
         onChange={(e) => setIncreamentValue(e.target.value)}
       />
-      <button
-        onClick={() =>
-          dispatch({
-            type: INCREAMENT_COUNTER,
-            payload: parseInt(increamentValue),
-          })
-        }
-      >
+      <button onClick={() => dispatch(increament(parseInt(increamentValue)))}>
         Increament
       </button>
       <br />
       <input
-        type="number"
+        type="text"
         placeholder="Value"
         value={decreamentValue}
         onChange={(e) => setDecreamentValue(e.target.value)}
       />
-      <button
-        onClick={() =>
-          dispatch({
-            type: DECREAMENT_COUNTER,
-            payload: parseInt(decreamentValue),
-          })
-        }
-      >
+      <button onClick={() => dispatch(decreament(parseInt(decreamentValue)))}>
         Decreament
       </button>
       <br />
-      <button onClick={() => dispatch({ type: RESET })}>Reset</button>
+      <button onClick={() => dispatch(reset())}>Reset</button>
     </div>
   );
 }
