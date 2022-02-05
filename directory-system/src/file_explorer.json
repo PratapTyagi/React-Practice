@@ -1,0 +1,36 @@
+{
+  "name": "Directory System",
+  "isFile": false,
+  "data": [
+    {
+      "name": "node_modules",
+      "isFile": true
+    },
+    {
+      "name": "public",
+      "isFile": false,
+      "data": [{ "name": "index.html", "isFile": true }]
+    },
+    {
+      "name": "src",
+      "isFile": false,
+      "data": [
+        {
+          "name": "App.js",
+          "isFile": true
+        },
+        {
+          "name": "App.css",
+          "isFile": true
+        },
+        {
+          "name": "index.js",
+          "isFile": true
+        }
+      ]
+    },
+    { "name": ".gitignore", "isFile": true },
+    { "name": "package-lock.json", "isFile": true },
+    { "name": "package.json", "isFile": true }
+  ]
+}
