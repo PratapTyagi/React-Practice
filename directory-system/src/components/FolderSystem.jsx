@@ -26,7 +26,9 @@ const FolderSystem = ({ file_explorer, count }) => {
         </span>
         {isOpen &&
           file_explorer.data.map((e) => {
-            return <FolderSystem file_explorer={e} count={count + 1} />;
+            return (
+              <FolderSystem key={e.name} file_explorer={e} count={count + 1} />
+            );
           })}
       </div>
     );
