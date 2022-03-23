@@ -1,0 +1,38 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.app {
+  text-align: center;
+  padding: 20px;
+  width: 40%;
+  margin: 0 auto;
+}
+
+.app form {
+  display: flex;
+  flex-direction: column;
+  color: grey;
+}
+
+.app form input::-webkit-file-upload-button {
+  color: whitesmoke;
+  background-color: black;
+  cursor: pointer;
+}
+
+.app form input {
+  padding: 10px;
+  outline: none;
+  margin: 5px;
+}
+
+.app form button {
+  cursor: pointer;
+  padding: 10px;
+  outline: none;
+  border: none;
+  color: whitesmoke;
+  background-color: rgb(94, 190, 158);
+}
