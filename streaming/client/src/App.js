@@ -11,14 +11,12 @@ const App = () => {
 
   const onChange = (e) => {
     e.preventDefault();
-    if (e.target.id === "file")
-      setForm({ ...form, [e.target.name]: e.target.files[0] });
-    else setForm({ ...form, [e.target.name]: e.target.value });
+    setForm({ ...form, [e.target.name]: e.target.value });
   };
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    if (form.name.length && form.file.length) {
+    if (form.name.length && form.file) {
       const formData = new FormData();
       formData.append("name", form.name);
       formData.append("fileData", form.file);
@@ -47,8 +45,15 @@ const App = () => {
           placeholder="Name"
           value={form.name}
           onChange={onChange}
+          required
         />
-        <input type="file" name="file" placeholder="File" onChange={onChange} />
+        <input
+          type="file"
+          name="file"
+          placeholder="File"
+          onChange={(e) => setForm({ ...form, file: e.target.files[0] })}
+          required
+        />
         <button type="submit">Submit</button>
       </form>
     </div>

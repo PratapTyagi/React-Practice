@@ -7,16 +7,15 @@ app.use(cors());
 app.use(express.json());
 
 app.post("/form", upload.single("fileData"), async (req, res) => {
-  console.log(req.file);
   try {
+    console.log(req.file);
     const file = req.file.filename;
     const { name } = req.body;
     // Can store in database accordingly
-    return res.json({ file: req.file, name });
+    return res.json({ status: 200, file: req.file, name });
   } catch (error) {
     console.log(error);
-    res.statusCode(500);
-    res.end("Server error");
+    res.json({ status: 500, message: "Server error" });
   }
 });
 
